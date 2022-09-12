@@ -91,10 +91,7 @@ export const PurityForm = () => {
     <>
       {!showScore ? (
         <VStack m={8} width="100%">
-          <Text>
-            Click on every item you have done. MPS stands for Member of the
-            Preferred Sex.
-          </Text>
+          <Text>Click on every item you have done.</Text>
           <form onSubmit={formik.handleSubmit}>
             <OrderedList>
               {Object.entries(questions).map(([key, value], idx) => (
