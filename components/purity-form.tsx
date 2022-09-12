@@ -109,6 +109,7 @@ export const PurityForm = () => {
                     colorScheme="blackAlpha"
                     onChange={formik.handleChange}
                     value={formik.values[key]}
+
                   >
                     {value as any}
                   </Checkbox>

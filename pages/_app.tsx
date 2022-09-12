@@ -9,6 +9,7 @@ const theme = extendTheme({
     global: {
       body: {
         bg: '#FBEFCB',
+        fontFamily: "'Times New Roman', Times, serif",
       },
       a: {
         color: 'blue.700',
@@ -36,7 +37,10 @@ const theme = extendTheme({
         baseStyle: {
           border: '1px solid black',
           borderColor: 'black',
-          defaultBgColor: "white"
+          defaultBgColor: "white",
+          _control: {
+            borderColor: 'black',
+          }
         },
       },
     }
