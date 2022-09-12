@@ -31,6 +31,11 @@ const theme = extendTheme({
         fontSize: 'md'
       },
     },
+    components: {
+      Checkbox: {
+        borderColor: 'black'
+      },
+    }
   },
 })
 
