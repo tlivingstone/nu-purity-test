@@ -10,6 +10,7 @@ import {
 import { useFormik } from "formik";
 import questions from "@data/test-questions.json";
 import { useState, useEffect } from "react";
+import { FaTwitter } from "react-icons/fa";
 
 export const PurityForm = () => {
   const [showScore, setShowScore] = useState(false);
@@ -81,6 +82,11 @@ export const PurityForm = () => {
     setFinalScoreMessage("");
   };
 
+  const shareOnTwitter = () => {
+    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.wtf`;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
+  };
+
   return (
     <>
       {!showScore ? (
@@ -125,6 +131,13 @@ export const PurityForm = () => {
           <Text as="h3">{finalScoreMessage}</Text>
           <Button onClick={startAgain} colorScheme="yellow">
             Start Again
+          </Button>
+          <Button
+            onClick={shareOnTwitter}
+            rightIcon={<FaTwitter />}
+            colorScheme="blue"
+          >
+            Tweet your score
           </Button>
         </VStack>
       )}

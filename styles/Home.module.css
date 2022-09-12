@@ -1,5 +1,7 @@
 .container {
   padding: 4rem 2rem;
+  background-image: url("../public/transparentGoose.png");
+  background-repeat: space;
 }
 
 .main {
@@ -22,6 +24,10 @@
   align-items: center;
 }
 
+.repeatBg {
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+}
 .footer a {
   display: flex;
   justify-content: center;
