@@ -8,7 +8,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
-import questions from "@data/test-questions.json";
+import questions from "@data/questions.json";
 import { useState, useEffect } from "react";
 import { FaTwitter } from "react-icons/fa";
 
