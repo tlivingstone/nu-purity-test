@@ -62,7 +62,7 @@ export const PurityForm = () => {
     setShowScore(false);
   };
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     let checkedBoxes = 0;
 
     const submittedValues = Object.values(values);
@@ -73,6 +73,12 @@ export const PurityForm = () => {
     });
     const finalScore = submittedValues.length - checkedBoxes;
     setFinalScore(finalScore);
+    const result = await fetch("/api/addScore", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ score: finalScore }),
+    });
+    console.log('logged anonymized score', result);
   };
 
   const startAgain = () => {
@@ -83,7 +89,7 @@ export const PurityForm = () => {
   };
 
   const shareOnTwitter = () => {
-    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.wtf`;
+    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.lol`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
   };
 
@@ -91,10 +97,7 @@ export const PurityForm = () => {
     <>
       {!showScore ? (
         <VStack m={8} width="100%">
-          <Text>
-            Click on every item you have done. MPS stands for Member of the
-            Preferred Sex.
-          </Text>
+          <Text>Click on every item you have done.</Text>
           <form onSubmit={formik.handleSubmit}>
             <OrderedList>
               {Object.entries(questions).map(([key, value], idx) => (
