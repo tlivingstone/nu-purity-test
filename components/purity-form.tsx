@@ -64,13 +64,13 @@ export const PurityForm = () => {
 
   const onSubmit = async (values: any) => {
     let checkedBoxes = 0;
-
     const submittedValues = Object.values(values);
     submittedValues.forEach((value) => {
       if (value) {
         checkedBoxes += 1;
       }
     });
+    if (checkedBoxes === 0) { return; }
     const finalScore = submittedValues.length - checkedBoxes;
     setFinalScore(finalScore);
     const result = await fetch("/api/addScore", {
