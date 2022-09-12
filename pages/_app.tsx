@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import Footer from '@components/footer';
+import { Meta } from '@components/Meta';
 
 /* Theming */
 const theme = extendTheme({
@@ -51,6 +52,7 @@ const theme = extendTheme({
 function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
+      <Meta />
       <Component {...pageProps} />
       <Footer />
     </ChakraProvider>

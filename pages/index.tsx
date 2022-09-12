@@ -9,12 +9,6 @@ import transparentGoose from "../public/transparentGoose.png";
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Loo Purity Test</title>
-        <meta name="description" content="Loo Purity Test" />
-        <link rel="icon" href="/goose-icon.png" />
-      </Head>
-
       <main className={styles.main}>
         <Image src={logo} alt="Loo purity test logo" />
         {/* <h1 className={styles.title}>Welcome to the Waterloo Purity Test</h1> */}
