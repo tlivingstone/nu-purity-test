@@ -81,7 +81,7 @@ export const PurityForm = () => {
                 </ListItem>
               ))}
             </OrderedList>
-            <HStack mt={5}>
+            <HStack mt={5} width="100%" justifyContent="center">
               <Button type="submit" colorScheme="yellow">
                 Submit
               </Button>{" "}
@@ -92,12 +92,14 @@ export const PurityForm = () => {
           </form>
         </VStack>
       ) : (
-        <VStack>
+        <VStack width="100%">
           <Text as="h2">Your score</Text>
-          <Text as="h3" color="red">
+          <Text as="h2" color="red">
             {finalScore}
           </Text>
-          <Button onClick={startAgain}>Start Again</Button>
+          <Button onClick={startAgain} colorScheme="yellow">
+            Start Again
+          </Button>
         </VStack>
       )}
     </>
