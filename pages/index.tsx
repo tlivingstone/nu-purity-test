@@ -1,4 +1,3 @@
-import { Text } from "@chakra-ui/react";
 import { PurityForm } from "@components/purity-form";
 import type { NextPage } from "next";
 import Head from "next/head";

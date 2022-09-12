@@ -13,7 +13,7 @@ const Footer = () => {
         </Text>
         <Text>
           not affiliated with the university of waterloo &copy;{" "}
-          {new Date().getFullYear()} | we do not collect any data | if you have
+          {new Date().getFullYear()} | we do not collect any identifiable data | if you have
           questions, show yourself on r/uwaterloo
         </Text>
       </VStack>

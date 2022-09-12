@@ -62,7 +62,7 @@ export const PurityForm = () => {
     setShowScore(false);
   };
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     let checkedBoxes = 0;
 
     const submittedValues = Object.values(values);
@@ -73,6 +73,12 @@ export const PurityForm = () => {
     });
     const finalScore = submittedValues.length - checkedBoxes;
     setFinalScore(finalScore);
+    const result = await fetch("/api/addScore", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ score: finalScore }),
+    });
+    console.log('logged anonymized score', result);
   };
 
   const startAgain = () => {
