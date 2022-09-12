@@ -38,7 +38,6 @@ export const PurityForm = () => {
   };
 
   const onSubmit = (values: any) => {
-    alert(JSON.stringify(values, null, 2));
     let checkedBoxes = 0;
 
     const submittedValues = Object.values(values);
@@ -60,7 +59,7 @@ export const PurityForm = () => {
   return (
     <>
       {!showScore ? (
-        <VStack m={8}>
+        <VStack m={8} width="100%">
           <Text>
             Click on every item you have done. MPS stands for Member of the
             Preferred Sex.
@@ -83,8 +82,12 @@ export const PurityForm = () => {
               ))}
             </OrderedList>
             <HStack mt={5}>
-              <Button type="submit">Submit</Button>{" "}
-              <Button onClick={clearCheckbox}>Clear checkboxes</Button>
+              <Button type="submit" colorScheme="yellow">
+                Submit
+              </Button>{" "}
+              <Button onClick={clearCheckbox} colorScheme="yellow">
+                Clear checkboxes
+              </Button>
             </HStack>
           </form>
         </VStack>
