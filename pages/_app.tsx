@@ -33,7 +33,10 @@ const theme = extendTheme({
     },
     components: {
       Checkbox: {
-        borderColor: 'black'
+        baseStyle: {
+          border: '1px solid black !important',
+          borderColor: 'black !important',
+        },
       },
     }
   },
