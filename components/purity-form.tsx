@@ -89,7 +89,7 @@ export const PurityForm = () => {
   };
 
   const shareOnTwitter = () => {
-    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.lol`;
+    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.wtf`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
   };
 
