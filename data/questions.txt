@@ -1,0 +1,195 @@
+{
+    "reddit": "Uses r/uwaterloo",
+    "stickers": "Have laptop stickers",
+    "design-team": "Join a student design team in first year",
+    "resume": "Had their resume reviewed""food": "Ate at Ken’s sushi or Lazeez",
+    "blueprint": "was part of uw blueprint or applied to blueprint",
+    "techPlus": "was part of the tech+ mentorship program"
+
+part of UW hip hop or limelight
+
+"attended a hackathon", 
+
+organized a hackathon
+
+worked as a SWE/PM/designer
+
+Part of an intramural team
+
+Own a mr. goose plushie
+
+Did coffee chats
+
+uses Notion 
+
+uses Figma 
+
+uses strava
+
+cried in E7
+
+cried in DC
+
+did leetcode on a Friday Night
+
+Lived in vancouver during covid 
+
+Worked at a start-up 
+
+Worked at a big tech company
+
+think about starting a start-up
+
+Goes rock climbing
+
+Is from Mississauga 
+
+Played league of legends
+
+Played super smash bros
+
+Have an engineering bridge picture
+
+Got purpled
+
+Had to explain the waterloo co-op program to someone
+
+Was in continuous round
+
+Got a job externally
+
+Been on the hack the north organizing team
+
+Tried to cali or bust
+
+Is into photography/has a photography account
+
+Pulled an all-nighter
+
+Pitched at velocity
+
+Spent a night on campus 
+
+Took at BET class
+
+Took a bird course that wasn’t really a bird course
+
+Has a personal website
+
+Has a fucked sleep schedule
+
+Have a caffein problem
+
+Worked on a side project
+
+Worked on multiple side projects
+
+Attended 5+ hackathons
+
+Lived in California/ NYC
+
+Posted “I’m excited to announce I’m working at [xyz
+    ] on LinkedIn”
+
+Wish you went to a different school
+
+Works out at PAC
+
+Lived in CMH or wish you lived in CMH
+
+Lived at the university-college residences
+
+Hated your roommates
+
+Been to burning man
+
+Struggled to find housing
+
+Rented from accommodate u
+
+Lived in waterloo on a co-op term
+
+Rallied the mob and got an extension on piazza
+
+Went to a party at CLV
+
+Smoked weed/ ate edibles
+
+Went to class drunk/ high
+
+Go to Phils or Prohibition
+
+Been to a darty during a summer term
+
+Been to ezra street on st patricks day
+
+Got a noise complaint
+
+Bombed an interview
+
+Been on a date
+
+Been on dating apps
+
+In a relationship
+
+Never been in a relationship because it’s hard to find people because of co-op
+
+be in a long distance relationship because of co-op/school terms 
+
+date someone within your program 
+
+dates someone outside of tech
+
+have relations with a co-op coworker
+
+have relations with a co-op manager
+
+Emailed everyone who interviewed for a role on Waterloo works to see if they're taking the offer
+
+Looked up how much their friends get paid on levels.fyi
+
+Got banned from Waterlooworks
+
+Got your co-op manager in trouble
+
+Got linkedin premium
+
+Sent your friends calendar invites to hangout
+
+Hated your group after a group project
+
+Thought about dropping out but stayed for the visa
+
+Pulled an all-nighter for a project
+
+Saw someone you knew on dating apps
+
+Failed a midterm
+
+Failed a class
+
+Triggered a fire alarm
+
+Used a school-provided condom
+
+Done psychedelics
+
+Went to class drunk/high
+
+Lied on your resume
+
+Is mentally ill
+
+have relations with a TA
+
+have relations with a professor
+
+Swam in Columbia lake
+
+Had sex on campus
+
+Had sex in waterloo park
+
+Made money by inflating sublet price
+}
