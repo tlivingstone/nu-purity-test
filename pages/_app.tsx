@@ -11,6 +11,7 @@ const theme = extendTheme({
         bg: '#FBEFCB',
       },
       a: {
+        color: 'blue.700',
         _hover: {
           textDecoration: 'underline',
         },

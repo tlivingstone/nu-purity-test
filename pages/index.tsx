@@ -23,6 +23,9 @@ const Home: NextPage = () => {
         <Text>
           Click on every item you have done. MPS stands for Member of the Preferred Sex.
         </Text>
+        <Text>
+          Inspired by the one and only <a href="http://ricepuritytest.com/" target="_blank" rel="noreferrer">Rice Purity Test</a>
+        </Text>
       </main>
     </div>
   )
