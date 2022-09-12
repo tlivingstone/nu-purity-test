@@ -14,8 +14,32 @@ import { useState, useEffect } from "react";
 export const PurityForm = () => {
   const [showScore, setShowScore] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
+  const [finalScoreMessage, setFinalScoreMessage] = useState("");
 
   useEffect(() => {
+    if (finalScore > 90) {
+      setFinalScoreMessage("ur too pure. welcome to loo.");
+    } else if (finalScore > 80) {
+      setFinalScoreMessage("ur pretty pure, prob a first year");
+    } else if (finalScore > 70) {
+      setFinalScoreMessage("trying new things i see.");
+    } else if (finalScore > 60) {
+      setFinalScoreMessage("i see you getting all risque");
+    } else if (finalScore > 50) {
+      setFinalScoreMessage("experimenting. i like it.");
+    } else if (finalScore > 40) {
+      setFinalScoreMessage("you're pretty badass");
+    } else if (finalScore > 30) {
+      setFinalScoreMessage("you've gotten around. i see u.");
+    } else if (finalScore > 20) {
+      setFinalScoreMessage("chad. respect.");
+    } else if (finalScore > 10) {
+      setFinalScoreMessage("how are you still alive tbh");
+    } else if (finalScore > 2) {
+      setFinalScoreMessage("honestly, how are you alive. please enlighten us.");
+    } else {
+      setFinalScoreMessage("i don't believe you");
+    }
     if (finalScore > 0) {
       setShowScore(true);
     }
@@ -54,6 +78,7 @@ export const PurityForm = () => {
     formik.resetForm();
     setFinalScore(0);
     setShowScore(false);
+    setFinalScoreMessage("");
   };
 
   return (
@@ -92,11 +117,12 @@ export const PurityForm = () => {
           </form>
         </VStack>
       ) : (
-        <VStack width="100%">
+        <VStack width="100%" gap={4}>
           <Text as="h2">Your score</Text>
           <Text as="h2" color="red">
             {finalScore}
           </Text>
+          <Text as="h3">{finalScoreMessage}</Text>
           <Button onClick={startAgain} colorScheme="yellow">
             Start Again
           </Button>

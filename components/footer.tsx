@@ -1,13 +1,22 @@
-import { Text } from "@chakra-ui/react";
+import { VStack, Text } from "@chakra-ui/react";
 import styles from "@styles/Home.module.css";
 
 const Footer = () => {
   return (
     <footer className={`${styles.footer}`}>
-      <Text>
-        not affiliated with the university of waterloo &copy;{" "}
-        {new Date().getFullYear()} | we do not collect any data
-      </Text>
+      <VStack gap={2} textAlign="center">
+        <Text>
+          Inspired by the one and only{" "}
+          <a href="http://ricepuritytest.com/" target="_blank" rel="noreferrer">
+            Rice Purity Test
+          </a>
+        </Text>
+        <Text>
+          not affiliated with the university of waterloo &copy;{" "}
+          {new Date().getFullYear()} | we do not collect any data | if you have
+          questions, show yourself on r/uwaterloo
+        </Text>
+      </VStack>
     </footer>
   );
 };

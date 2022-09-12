@@ -5,6 +5,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import logo from "../public/official-logo.png";
+import transparentGoose from "../public/transparentGoose.png";
 
 const Home: NextPage = () => {
   return (
@@ -22,12 +23,6 @@ const Home: NextPage = () => {
           Caution: This is not a bucket list. Completion of all items on this
           test will likely result in death.
         </p>
-        <Text>
-          Inspired by the one and only{" "}
-          <a href="http://ricepuritytest.com/" target="_blank" rel="noreferrer">
-            Rice Purity Test
-          </a>
-        </Text>
         <PurityForm />
       </main>
     </div>
