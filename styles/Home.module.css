@@ -2,7 +2,7 @@
   padding: 4rem 2rem;
   background-image: url("../public/transparentGoose.png");
   background-repeat: repeat;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .main {
@@ -13,7 +13,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .footer {
@@ -51,7 +50,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .title,
@@ -62,10 +61,10 @@
 .description {
   margin: 2rem 0;
   /* line-height: 1.5; */
-  font-size: 20px; 
-  font-weight: 600; 
-  font-style: italic; 
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .code {
@@ -78,7 +77,6 @@
 }
 
 @media (max-width: 600px) {
-
 }
 
 @media (prefers-color-scheme: dark) {

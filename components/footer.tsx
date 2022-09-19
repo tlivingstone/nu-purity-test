@@ -1,6 +1,7 @@
-import { VStack, Text } from "@chakra-ui/react";
-import styles from "@styles/Home.module.css";
+import { Text, VStack } from "@chakra-ui/react";
 
+import styles from "@styles/Home.module.css";
+ 
 const Footer = () => {
   return (
     <footer className={`${styles.footer}`}>
@@ -13,8 +14,8 @@ const Footer = () => {
         </Text>
         <Text>
           not affiliated with the university of waterloo &copy;{" "}
-          {new Date().getFullYear()} | we do not collect any identifiable data | if you have
-          questions for us, show yourself on r/uwaterloo
+          {new Date().getFullYear()} | we do not collect any identifiable data |
+          if you have questions for us, show yourself on r/uwaterloo
         </Text>
       </VStack>
     </footer>

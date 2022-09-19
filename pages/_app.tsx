@@ -1,53 +1,53 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import Footer from '@components/footer';
-import { Meta } from '@components/Meta';
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import Footer from "@components/footer";
+import { Meta } from "@components/Meta";
+import type { AppProps } from "next/app";
+
+import "../styles/globals.css";
 
 /* Theming */
 const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: '#FBEFCB',
+        bg: "#FBEFCB",
         fontFamily: "'Times New Roman', Times, serif",
       },
       a: {
-        color: 'blue.700',
+        color: "blue.700",
         _hover: {
-          textDecoration: 'underline',
+          textDecoration: "underline",
         },
       },
       h1: {
-        fontSize: '4xl',
-        fontWeight: 'bold',
+        fontSize: "4xl",
+        fontWeight: "bold",
       },
       h2: {
-        fontSize: '2xl',
-        fontWeight: 'bold',
+        fontSize: "2xl",
+        fontWeight: "bold",
       },
       h3: {
-        fontSize: 'lg'
+        fontSize: "lg",
       },
       h4: {
-        fontSize: 'md'
+        fontSize: "md",
       },
     },
     components: {
       Checkbox: {
         baseStyle: {
-          border: '1px solid black',
-          borderColor: 'black',
+          border: "1px solid black",
+          borderColor: "black",
           defaultBgColor: "white",
           _control: {
-            borderColor: 'black',
-          }
+            borderColor: "black",
+          },
         },
       },
-    }
+    },
   },
-})
-
+});
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -56,7 +56,7 @@ function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer />
     </ChakraProvider>
-  )
+  );
 }
 
-export default App
+export default App;

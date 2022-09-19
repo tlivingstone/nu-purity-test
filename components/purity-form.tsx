@@ -1,15 +1,15 @@
 import {
+  Button,
   Checkbox,
+  HStack,
   ListItem,
   OrderedList,
   Text,
-  VStack,
-  Button,
-  HStack,
+  VStack
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
 import questions from "@data/questions.json";
-import { useState, useEffect } from "react";
+import { useFormik } from "formik";
+import { useEffect, useState } from "react";
 import { FaTwitter } from "react-icons/fa";
 
 export const PurityForm = () => {
@@ -47,7 +47,7 @@ export const PurityForm = () => {
   }, [finalScore]);
 
   // Formik key value config
-  let formikKeys = JSON.parse(JSON.stringify(questions));
+  const formikKeys = JSON.parse(JSON.stringify(questions));
   Object.keys(formikKeys).forEach((i: string) => (formikKeys[i] = ""));
   const formik = useFormik({
     initialValues: formikKeys,
@@ -62,6 +62,8 @@ export const PurityForm = () => {
     setShowScore(false);
   };
 
+  // object of question keyss
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any 
   const onSubmit = async (values: any) => {
     let checkedBoxes = 0;
     const submittedValues = Object.values(values);
@@ -70,15 +72,16 @@ export const PurityForm = () => {
         checkedBoxes += 1;
       }
     });
-    if (checkedBoxes === 0) { return; }
+    if (checkedBoxes === 0) {
+      return;
+    }
     const finalScore = submittedValues.length - checkedBoxes;
     setFinalScore(finalScore);
-    const result = await fetch("/api/addScore", {
+    await fetch("/api/addScore", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ score: finalScore }),
     });
-    console.log('logged anonymized score', result);
   };
 
   const startAgain = () => {
@@ -109,9 +112,8 @@ export const PurityForm = () => {
                     colorScheme="blackAlpha"
                     onChange={formik.handleChange}
                     value={formik.values[key]}
-
                   >
-                    {value as any}
+                    {value}
                   </Checkbox>
                 </ListItem>
               ))}

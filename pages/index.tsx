@@ -1,10 +1,10 @@
 import { PurityForm } from "@components/purity-form";
 import type { NextPage } from "next";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import Image from "next/image";
+
+import styles from "../styles/Home.module.css";
+
 import logo from "../public/official-logo.png";
-import transparentGoose from "../public/transparentGoose.png";
 
 const Home: NextPage = () => {
   return (
