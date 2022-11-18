@@ -4,13 +4,11 @@ import Image from "next/image";
 
 import styles from "../styles/Home.module.css";
 
-import logo from "../public/official-logo.png";
-
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <Image src={logo} alt="Loo purity test logo" />
+        <Image src="/official-logo.png" alt="Loo purity test logo" />
         {/* <h1 className={styles.title}>Welcome to the Waterloo Purity Test</h1> */}
         <p className={styles.description}>
           Caution: This is not a bucket list. Completion of all items on this
