@@ -5,7 +5,7 @@ import {
   ListItem,
   OrderedList,
   Text,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import questions from "@data/questions.json";
 import { useFormik } from "formik";
@@ -63,7 +63,7 @@ export const PurityForm = () => {
   };
 
   // object of question keyss
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = async (values: any) => {
     let checkedBoxes = 0;
     const submittedValues = Object.values(values);
