@@ -12,12 +12,12 @@ export default async function handler(
   res: NextApiResponse<Response>
 ) {
   try {
-    const { score } = req.body;
+    const { score, values } = req.body;
     if (!score) {
       res.status(400).json({ msg: "missing score" });
       return;
     }
-    await prisma.score.create({ data: { score: score } });
+    await prisma.score.create({ data: { score, values } });
     res.status(200).json({ msg: "added score (without identifying data)" });
   } catch (err: unknown) {
     res.status(200).json({ msg: `Error ${err}` });

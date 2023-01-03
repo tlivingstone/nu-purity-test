@@ -80,7 +80,7 @@ export const PurityForm = () => {
     await fetch("/api/addScore", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ score: finalScore }),
+      body: JSON.stringify({ score: finalScore, values: values }),
     });
   };
 
