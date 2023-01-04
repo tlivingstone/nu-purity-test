@@ -39,7 +39,6 @@ const theme = extendTheme({
         baseStyle: {
           border: "1px solid black",
           borderColor: "black",
-          defaultBgColor: "white",
           _control: {
             borderColor: "black",
           },

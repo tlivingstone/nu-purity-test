@@ -110,6 +110,8 @@ export const PurityForm = () => {
                     name={key}
                     type="text"
                     colorScheme="blackAlpha"
+                    color="black"
+                    border="gray"
                     onChange={formik.handleChange}
                     value={formik.values[key]}
                   >
