@@ -19,7 +19,7 @@ export const PurityForm = () => {
 
   useEffect(() => {
     if (finalScore > 90) {
-      setFinalScoreMessage("ur too pure. welcome to loo.");
+      setFinalScoreMessage("ur too pure. welcome to nu.");
     } else if (finalScore > 80) {
       setFinalScoreMessage("ur pretty pure, prob a first year");
     } else if (finalScore > 70) {
@@ -92,7 +92,7 @@ export const PurityForm = () => {
   };
 
   const shareOnTwitter = () => {
-    const str = `Omg I found out my Waterloo Purity Test Score is ${finalScore}. Find out yours at loopuritytest.wtf`;
+    const str = `Omg I found out my NU Purity Test Score is ${finalScore}. Find out yours at nupuritytest.com`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
   };
 

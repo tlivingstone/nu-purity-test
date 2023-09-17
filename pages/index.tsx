@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Image
           src="/official-logo.png"
-          alt="Loo purity test logo"
+          alt="NU purity test logo"
           width={1000}
           height={200}
         />
