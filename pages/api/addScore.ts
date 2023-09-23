@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import prisma from "@utils/prisma";
+import { db } from "@utils/firebase";
+import { addDoc, collection } from "firebase/firestore";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Response = {
@@ -14,12 +15,25 @@ export default async function handler(
   try {
     const { score, values } = req.body;
     if (!score) {
-      res.status(400).json({ msg: "missing score" });
-      return;
+      return res.status(400).json({ msg: "missing score" });
     }
-    await prisma.score.create({ data: { score, values } });
-    res.status(200).json({ msg: "added score (without identifying data)" });
+    if (!values) {
+      return res.status(400).json({ msg: "missing values" });
+    }
+    try {
+      await addDoc(collection(db, "scores"), {
+        score,
+      });
+      // await addDoc(collection(db, "values"), {
+      //   values,
+      // });
+      return res
+        .status(200)
+        .json({ msg: "added score (without identifying data)" });
+    } catch (e) {
+      return res.status(500).json({ msg: `Error ${e}` });
+    }
   } catch (err: unknown) {
-    res.status(200).json({ msg: `Error ${err}` });
+    return res.status(500).json({ msg: `Error ${err}` });
   }
 }
