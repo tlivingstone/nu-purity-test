@@ -1,6 +1,6 @@
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { Meta } from "@components/Meta";
 import Footer from "@components/footer";
+import { Meta } from "@components/Meta";
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
 
