@@ -8,6 +8,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import questions from "@data/questions.json";
+import { db } from "@utils/firebase";
+import { collection, doc, setDoc } from "firebase/firestore";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { FaTwitter } from "react-icons/fa";
@@ -64,7 +66,7 @@ export const PurityForm = () => {
 
   // object of question keyss
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = async (values: any) => {
+  const onSubmit = async (values: Record<number, string | boolean>) => {
     let checkedBoxes = 0;
     const submittedValues = Object.values(values);
     submittedValues.forEach((value) => {
@@ -77,11 +79,22 @@ export const PurityForm = () => {
     }
     const finalScore = submittedValues.length - checkedBoxes;
     setFinalScore(finalScore);
-    await fetch("/api/addScore", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ score: finalScore, values }),
+
+    const scoreRef = doc(collection(db, "scores"));
+    await setDoc(scoreRef, { score: finalScore });
+
+    const questionsRef = doc(collection(db, "questions"));
+    const finalValues = [] as Array<{ id: number; title: string }>;
+    Object.values(values).forEach((value, idx) => {
+      if (value) {
+        const element = {
+          id: parseInt(Object.keys(questions)[idx]),
+          title: Object.values(questions)[idx],
+        };
+        finalValues.push(element);
+      }
     });
+    await setDoc(questionsRef, { questions: finalValues });
   };
 
   const startAgain = () => {
@@ -95,7 +108,7 @@ export const PurityForm = () => {
     const str = `Omg I found out my NU Purity Test Score is ${finalScore}. Find out yours at nupuritytest.com`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
   };
-
+  ``;
   return (
     <>
       {!showScore ? (
