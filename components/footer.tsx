@@ -14,10 +14,12 @@ const Footer = () => {
         </Text>
         <Text>
           not affiliated with northestern university &copy;{" "}
-          {new Date().getFullYear()} | we do not collect any identifiable data |
+          {new Date().getFullYear()} | we do not collect any identifiable data
+          <br />
           if you have questions for us, show yourself on{" "}
-          <a href="https://www.reddit.com/r/NEU/">r/neu</a>
-          {/* how do i get rid of the space here? */}
+          <a href="https://www.reddit.com/r/NEU/">r/neu</a> | download{" "}
+          <a href="https://www.makefireplace.com/download">fireplace</a> to meet
+          other huskies
         </Text>
       </VStack>
     </footer>

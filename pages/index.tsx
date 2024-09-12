@@ -14,7 +14,7 @@ const Home: NextPage = () => {
           width={1000}
           height={200}
         />
-        {/* <h1 className={styles.title}>Welcome to the Waterloo Purity Test</h1> */}
+        {/* <h1 className={styles.title}>Welcome to the NU Purity Test</h1> */}
         <p className={styles.description}>
           Caution: This is not a bucket list. Completion of all items on this
           test will likely result in death.

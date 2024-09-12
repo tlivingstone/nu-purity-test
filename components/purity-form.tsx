@@ -11,8 +11,9 @@ import questions from "@data/questions.json";
 import { db } from "@utils/firebase";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { useFormik } from "formik";
+import html2canvas from "html2canvas";
 import { useEffect, useState } from "react";
-import { FaTwitter } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
 
 export const PurityForm = () => {
   const [showScore, setShowScore] = useState(false);
@@ -104,9 +105,33 @@ export const PurityForm = () => {
     setFinalScoreMessage("");
   };
 
-  const shareOnTwitter = () => {
-    const str = `Omg I found out my NU Purity Test Score is ${finalScore}. Find out yours at nupuritytest.com`;
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURI(str)}`);
+  const captureAndShare = () => {
+    const element = document.body;
+    html2canvas(element).then((canvas) => {
+      canvas.toBlob((blob) => {
+        if (blob) {
+          const file = new File(
+            [blob],
+            `NU_Purity_Test_Score_${finalScore}.png`,
+            { type: "image/png" }
+          );
+          const shareData = {
+            files: [file],
+            text: `Omg I found out my NU Purity Test Score is ${finalScore}. Find out yours at nupuritytest.com`,
+          };
+
+          if (navigator.canShare && navigator.canShare(shareData)) {
+            navigator.share(shareData);
+          } else {
+            const imgData = canvas.toDataURL("image/png");
+            const link = document.createElement("a");
+            link.href = imgData;
+            link.download = `NU_Purity_Test_Score_${finalScore}.png`;
+            link.click();
+          }
+        }
+      }, "image/png");
+    });
   };
   ``;
   return (
@@ -116,22 +141,24 @@ export const PurityForm = () => {
           <Text>Click on every item you have done.</Text>
           <form onSubmit={formik.handleSubmit}>
             <OrderedList>
-              {Object.entries(questions).map(([key, value], idx) => (
-                <ListItem key={idx}>
-                  <Checkbox
-                    id={key}
-                    name={key}
-                    type="text"
-                    colorScheme="blackAlpha"
-                    color="black"
-                    border="gray"
-                    onChange={formik.handleChange}
-                    value={formik.values[key]}
-                  >
-                    {value}
-                  </Checkbox>
-                </ListItem>
-              ))}
+              {Object.entries(questions)
+                .sort(([a], [b]) => parseInt(a) - parseInt(b))
+                .map(([key, value], idx) => (
+                  <ListItem key={idx}>
+                    <Checkbox
+                      id={key}
+                      name={key}
+                      type="text"
+                      colorScheme="blackAlpha"
+                      color="black"
+                      border="gray"
+                      onChange={formik.handleChange}
+                      value={formik.values[key]}
+                    >
+                      {value}
+                    </Checkbox>
+                  </ListItem>
+                ))}
             </OrderedList>
             <HStack mt={5} width="100%" justifyContent="center">
               <Button type="submit" colorScheme="yellow">
@@ -150,15 +177,15 @@ export const PurityForm = () => {
             {finalScore}
           </Text>
           <Text as="h3">{finalScoreMessage}</Text>
-          <Button onClick={startAgain} colorScheme="yellow">
+          <Button onClick={startAgain} colorScheme="red">
             Start Again
           </Button>
           <Button
-            onClick={shareOnTwitter}
-            rightIcon={<FaTwitter />}
-            colorScheme="blue"
+            onClick={captureAndShare}
+            leftIcon={<FaShare />}
+            colorScheme="yellow"
           >
-            Tweet your score
+            Share your score
           </Button>
         </VStack>
       )}
